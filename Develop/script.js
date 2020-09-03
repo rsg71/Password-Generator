@@ -14,60 +14,71 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
- 
+
+
+//determining the number of characters for the password
+var passwordLength = prompt ("How many characters would you like your password to contain?"); 
+
+      if (passwordLength < 8) {
+          alert("Password length must be at least 8 characters")
+          var passwordLength = prompt ("How many characters would you like your password to contain?"); 
+          
+      }
+      else if (passwordLength > 128) {
+        alert("Password length can be no more than than 128 characters")
+        var passwordLength = prompt ("How many characters would you like your password to contain?");
+      }
+
 //confirming which type of characters the user will input
-var special = confirm ("Click OK to confirm if you're going to include special characters")
-var numeric = confirm ("Click OK to confirm if you're going to include numeric characters")
-var lowercase = confirm ("Click OK to confirm if you're going to include lowercase characters")
-var uppercase = confirm ("Click OK to confirm if you're going to include uppercase characters")
+var special = confirm ("Click OK to confirm if you'd like to include special characters")
+var numeric = confirm ("Click OK to confirm if you'd like to include numeric characters")
+var lowercase = confirm ("Click OK to confirm if you'd like to include lowercase characters")
+var uppercase = confirm ("Click OK to confirm if you'd like to include uppercase characters")
+
 
 //if statement in case the user selects "cancel" for all four options
-if (special == false && numeric == false && lowercase == false && uppercase == false) {
-  alert ("Please choose at least one option")
-  var special = confirm ("Click OK to confirm if you're going to include special characters")
-  var numeric = confirm ("Click OK to confirm if you're going to include numeric characters") 
-  var lowercase = confirm ("Click OK to confirm if you're going to include lowercase characters")
-  var uppercase = confirm ("Click OK to confirm if you're going to include uppercase characters")
-}
-else {
-}
+      if (special == false && numeric == false && lowercase == false && uppercase == false) {
+        alert ("Error: please choose OK for at least one type of character")
+        var special = confirm ("Click OK to confirm if you're going to include special characters")
+        var numeric = confirm ("Click OK to confirm if you're going to include numeric characters") 
+        var lowercase = confirm ("Click OK to confirm if you're going to include lowercase characters")
+        var uppercase = confirm ("Click OK to confirm if you're going to include uppercase characters")
+      }
+      else {
+      }
 
 
-var specialChars = "!@#$%^&*()_+"
+var specialChars =  "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 var numericChars = "123456789"
 var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz"
 var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-// var chars = "!@#%^&*()_+123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var chars = "";
        
+//start with emtpy quotes
+
 function generatePassword () {
   var pword = "";
-  var passwordLength = prompt ("How many characters would you like your password to contain?");
   
+  //add these strings to the chars "" if use chooses confirm
+  if (special == true) {
+    chars += specialChars;  
+  }
+  if (numeric == true) {
+    chars += numericChars;  
+  }
+  if (lowercase == true) {
+    chars += lowerCaseChars;  
+  }
+  if (uppercase == true) {
+    chars += upperCaseChars;  
+  }
+
+
+  //for loop that selects random character from chars and appends character to password
     for (var i=0; i < passwordLength; i++) {
-      
-      //get random position------------------
-      // var randomNumber = Math.floor(Math.random()*chars.length);
 
-       //append the character to password-----------------
-      // pword += chars.substring(randomNumber,randomNumber+1);
-
-      if (special == true){
-      var randomSpecial = Math.floor(Math.random()*numericChars.length);
-      pword += numericChars.substring(randomSpecial,randomSpecial+1);
-      }
-      if (special == true){
-      var randomNumeric = Math.floor(Math.random()*numericChars.length);
-      pword += numericChars.substring(randomNumeric,randomNumeric+1);
-      }
-      if (lowercase == true){
-      var randomLowerCase = Math.floor(Math.random()*lowerCaseChars.length);
-      pword += lowerCaseChars.substring(randomLowerCase,randomLowerCase+1);
-      }
-      if (uppercase == true){
-      var randomUpperCase = Math.floor(Math.random()*upperCaseChars.length);
-      pword += upperCaseChars.substring(randomUpperCase,randomUpperCase+1);
-      }
-     
+      var randomChar = Math.floor(Math.random()*chars.length);
+      pword += chars.substring(randomChar,randomChar+1);   
       
 
     }
@@ -75,5 +86,4 @@ function generatePassword () {
   return pword
         
 }
-// alert ("Your password is: "+ password)
     
