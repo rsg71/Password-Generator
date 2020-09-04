@@ -34,19 +34,17 @@ function generatePassword () {
 
   var passwordLength = prompt ("How many characters would you like your password to contain?"); 
 
-  while (passwordLength)
-
-
-
-      // if (passwordLength < 8) {
-      //     alert("Password length must be at least 8 characters")
-      //     var passwordLength = prompt ("How many characters would you like your password to contain?"); 
+while(passwordLength < 8 || passwordLength > 128) {
+      if (passwordLength < 8) {
+          alert("Password length must be at least 8 characters")
+          var passwordLength = prompt ("How many characters would you like your password to contain?"); 
           
-      // }
-      // else if (passwordLength > 128) {
-      //   alert("Password length can be no more than than 128 characters")
-      //   var passwordLength = prompt ("How many characters would you like your password to contain?");
-      // }
+      }
+      else if (passwordLength > 128) {
+        alert("Password length can be no more than than 128 characters")
+        var passwordLength = prompt ("How many characters would you like your password to contain?");
+       }
+}
 
 //confirming which type of characters the user will input
 var special = confirm ("Click OK to confirm if you'd like to include special characters")
