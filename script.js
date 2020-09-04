@@ -17,17 +17,36 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //determining the number of characters for the password
-var passwordLength = prompt ("How many characters would you like your password to contain?"); 
 
-      if (passwordLength < 8) {
-          alert("Password length must be at least 8 characters")
-          var passwordLength = prompt ("How many characters would you like your password to contain?"); 
+
+
+var specialChars =  "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+var numericChars = "123456789"
+var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz"
+var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var chars = "";
+       
+//start with emtpy quotes
+
+function generatePassword () {
+  var pword = "";
+
+
+  var passwordLength = prompt ("How many characters would you like your password to contain?"); 
+
+  while (passwordLength)
+
+
+
+      // if (passwordLength < 8) {
+      //     alert("Password length must be at least 8 characters")
+      //     var passwordLength = prompt ("How many characters would you like your password to contain?"); 
           
-      }
-      else if (passwordLength > 128) {
-        alert("Password length can be no more than than 128 characters")
-        var passwordLength = prompt ("How many characters would you like your password to contain?");
-      }
+      // }
+      // else if (passwordLength > 128) {
+      //   alert("Password length can be no more than than 128 characters")
+      //   var passwordLength = prompt ("How many characters would you like your password to contain?");
+      // }
 
 //confirming which type of characters the user will input
 var special = confirm ("Click OK to confirm if you'd like to include special characters")
@@ -46,18 +65,6 @@ var uppercase = confirm ("Click OK to confirm if you'd like to include uppercase
       }
       else {
       }
-
-
-var specialChars =  "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-var numericChars = "123456789"
-var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz"
-var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var chars = "";
-       
-//start with emtpy quotes
-
-function generatePassword () {
-  var pword = "";
   
   //add these strings to the chars "" if use chooses confirm
   if (special == true) {
