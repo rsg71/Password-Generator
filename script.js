@@ -24,13 +24,14 @@ var specialChars =  "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 var numericChars = "123456789"
 var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz"
 var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var chars = "";
 
 
        
 //start with emtpy quotes
 
 function generatePassword () {
+
+  var chars = "";
   var pword = "";
 
 
@@ -66,14 +67,12 @@ console.log("uppercase = " + uppercase);
         var lowercase = confirm ("Click OK to confirm if you're going to include lowercase characters")
         var uppercase = confirm ("Click OK to confirm if you're going to include uppercase characters")
       }
-      else {
-      }
+      
   
   //add these strings to the chars "" if use chooses confirm
   if (special) {
     chars += specialChars; 
   }
-  
   console.log("chars = " + chars);
 
   if (numeric) {
@@ -81,14 +80,11 @@ console.log("uppercase = " + uppercase);
   }
   console.log("chars = " +chars);
   
-  console.log("chars = " +chars);
-
   if (lowercase) {
     chars += lowerCaseChars;  
   }
   console.log("chars = " +chars);
  
-
   if (uppercase) {
     chars += upperCaseChars; 
   }
