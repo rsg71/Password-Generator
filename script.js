@@ -118,6 +118,11 @@ function copyFunction () {
   document.execCommand("copy");
 
   alert("Copied!");
-
-
 }
+
+// function hideFunction () {
+  
+//   console.log(password)
+//   password.type="password";
+  
+// }
