@@ -118,6 +118,11 @@ button[disabled] {
   overflow: hidden;
 }
 
+#copy-Btn {
+  font-size:4rem;
+  
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

@@ -108,3 +108,16 @@ console.log("uppercase = " + uppercase);
         
 }
     
+
+function copyFunction () {
+  var copyText = document.querySelector("#password");
+  
+  copyText.select();
+  copyText.setSelectionRange(0,99999);
+
+  document.execCommand("copy");
+
+  alert("Copied!");
+
+
+}
