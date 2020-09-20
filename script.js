@@ -25,6 +25,8 @@ var numericChars = "123456789"
 var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz"
 var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var chars = "";
+
+
        
 //start with emtpy quotes
 
@@ -48,10 +50,13 @@ while(passwordLength < 8 || passwordLength > 128) {
 
 //confirming which type of characters the user will input
 var special = confirm ("Click OK to confirm if you'd like to include special characters")
+console.log("special = " + special);
 var numeric = confirm ("Click OK to confirm if you'd like to include numeric characters")
+console.log("numeric = " + numeric);
 var lowercase = confirm ("Click OK to confirm if you'd like to include lowercase characters")
+console.log("lowercase = " + lowercase);
 var uppercase = confirm ("Click OK to confirm if you'd like to include uppercase characters")
-
+console.log("uppercase = " + uppercase);
 
 //if statement in case the user selects "cancel" for all four options
       if (special == false && numeric == false && lowercase == false && uppercase == false) {
@@ -65,18 +70,33 @@ var uppercase = confirm ("Click OK to confirm if you'd like to include uppercase
       }
   
   //add these strings to the chars "" if use chooses confirm
-  if (special == true) {
-    chars += specialChars;  
+  if (special) {
+    chars += specialChars; 
   }
-  if (numeric == true) {
-    chars += numericChars;  
+  
+  console.log("chars = " + chars);
+
+  if (numeric) {
+    chars += numericChars; 
   }
-  if (lowercase == true) {
+  console.log("chars = " +chars);
+  
+  console.log("chars = " +chars);
+
+  if (lowercase) {
     chars += lowerCaseChars;  
   }
-  if (uppercase == true) {
-    chars += upperCaseChars;  
+  console.log("chars = " +chars);
+ 
+
+  if (uppercase) {
+    chars += upperCaseChars; 
   }
+  console.log("chars = " +chars) ;
+  
+
+  
+  
 
 
   //for loop that selects random character from chars and appends character to password
