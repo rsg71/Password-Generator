@@ -24,6 +24,10 @@ Finally a password is generated for the user to use that complies with their inp
 <img src="imgs/gif2.gif" alt="password generator second gif">
 
 
+# Contact Information
+
+Robert Greenawalt (robert.greenawalt29@gmail.com)
+
  ## License
 
 MIT License
