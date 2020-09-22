@@ -19,9 +19,9 @@ Finally a password is generated for the user to use that complies with their inp
 
 # Usage
 
-<img src="gif1.gif" alt="first gif of usage of password generator">
+<img src="imgs/gif1.gif" alt="first gif of usage of password generator">
 
-<img src="gif2.gif" alt="password generator second gif">
+<img src="imgs/gif2.gif" alt="password generator second gif">
 
 
  ## License
